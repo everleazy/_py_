@@ -7,7 +7,6 @@ def ym_get_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
         metrics=_metrics,
         dimensions=_dimensions,
         sort=_sort,
-        direct_client_logins=_direct_login,
         lang="ru",
         limit=limit,
         accuracy='full'
@@ -34,7 +33,6 @@ def ym_get_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
                 metrics=_metrics,
                 dimensions=_dimensions,
                 sort=_sort,
-                direct_client_logins=_direct_login,
                 lang="ru",
                 limit=limit,
                 accuracy='full',
