@@ -101,6 +101,7 @@ def ga_auth():
 def get_ga_stat():
     need_dates = pd.date_range(start=start_date, end=end_date).astype('str').to_list()
     print('period:', start_date, '-', end_date, '// count day:', len(need_dates))
+    text_msg = '='
 
     ga_stat = pd.DataFrame()
     for iter_day in need_dates:
@@ -135,7 +136,7 @@ def get_ga_stat():
 
         clear_output()
         
-        text_msg = '='
+        
         dada = 1
         print(text_msg)
         text_msg = text_msg + '='
