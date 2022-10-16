@@ -136,7 +136,7 @@ def get_ga_stat():
             ga_stat = pd.concat([print_response(response), ga_stat])
 
         clear_output()
-        print(iter_day, ' - done! //', str(dada)+'/'+str(len(need_dates)), 'days')
+        print(iter_day, '- done! //', str(dada)+'/'+str(len(need_dates)), 'days')
         dada += 1
         time.sleep(0.15)
 
