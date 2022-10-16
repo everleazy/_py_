@@ -133,8 +133,14 @@ def get_ga_stat():
         else:
             ga_stat = pd.concat([print_response(response), ga_stat])
 
-        print(iter_day, '- done..')
         clear_output()
+        
+        text_msg = '='
+        dada = 1
+        print(text_msg)
+        text_msg = text_msg + '='
+        print(str(round(1/len(need_dates)*100,2)), '%')
+        
 
 
     # # ренейм заголовков
