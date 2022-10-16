@@ -102,6 +102,7 @@ def get_ga_stat():
     need_dates = pd.date_range(start=start_date, end=end_date).astype('str').to_list()
     print('period:', start_date, '-', end_date, '// count day:', len(need_dates))
     text_msg = '='
+    dada = 1
 
     ga_stat = pd.DataFrame()
     for iter_day in need_dates:
@@ -135,13 +136,10 @@ def get_ga_stat():
             ga_stat = pd.concat([print_response(response), ga_stat])
 
         clear_output()
-        
-        
-        dada = 1
-        print(text_msg)
-        text_msg = text_msg + '='
-        print(str(round(1/len(need_dates)*100,2)), '%')
-        
+        print(iter_day, ' - done! //', str(dada)+'/'+str(len(need_dates)), 'days')
+        dada += 1
+        time.sleep(0.15)
+
 
 
     # # ренейм заголовков
@@ -149,8 +147,8 @@ def get_ga_stat():
 
     # # date to datetime
     ga_stat['date'] = pd.to_datetime(ga_stat['date'], format='%Y%m%d')
-
-
+    
+    clear_output()
     print('---------------------\n', 'done! count row:', len(ga_stat), '\n---------------------')
 
     return ga_stat
