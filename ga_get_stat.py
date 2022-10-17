@@ -112,27 +112,27 @@ def get_ga_stat():
                                metrics_list,
                                dimension_list, '0')
 
-        try:
-            total_row = int(response['reports'][0]['data']['rowCount'])
-            if total_row > 100_000:
-                print('count iteration:', total_row // 100_000 + 1)
-                for i in range(0, total_row // 100_000 + 1):
-                    i = 0
-                    res_df = pd.DataFrame()
+        total_row = int(response['reports'][0]['data']['rowCount'])
 
-                    response = get_report3(analytics,
-                                           iter_day,
-                                           iter_day,
-                                           id_ga,
-                                           metrics_list,
-                                           dimension_list, str(i))
-                    res_df = pd.concat([res_df, print_response(response)])
-                    ga_stat = pd.concat([res_df, ga_stat])
+        if total_row > 100_000:
+            print('count iteration:', total_row // 100_000 + 1)
+            for i in range(0, total_row // 100_000 + 1):
+                i = str(0)
+                res_df = pd.DataFrame()
+
+                response = get_report3(analytics,
+                                       iter_day,
+                                       iter_day,
+                                       id_ga,
+                                       metrics_list,
+                                       dimension_list, str(i))
+                res_df = pd.concat([res_df, print_response(response)])
+                ga_stat = pd.concat([res_df, ga_stat])
 
                 i += 100_000
                 if i > total_row:
                     i = total_row
-        except:
+        else:
             ga_stat = pd.concat([print_response(response), ga_stat])
 
         clear_output()
