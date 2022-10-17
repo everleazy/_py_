@@ -111,9 +111,10 @@ def get_ga_stat():
                                id_ga,
                                metrics_list,
                                dimension_list, '0')
-
-        total_row = int(response['reports'][0]['data']['rowCount'])
-
+        try:
+            total_row = int(response['reports'][0]['data']['rowCount'])
+        except:
+            total_row = 1
         if total_row > 100_000:
             print('count iteration:', total_row // 100_000 + 1)
             for i in range(0, total_row // 100_000 + 1):
