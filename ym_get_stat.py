@@ -1,5 +1,4 @@
-# Получение статистики
-def ym_get_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
+def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
     params = dict(
         ids=counter,
         date1=_date1,
@@ -48,7 +47,6 @@ def ym_get_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
     print('Данные полностью скачены!')
     
     return res_df
-
 # для форматирования времени
 def to_time_str(df):
     time_int = round(df['Время на сайте'])
