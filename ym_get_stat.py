@@ -1,4 +1,4 @@
-def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, _lang='ru'):
+def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, lang='ru'):
     params = dict(
         ids=counter,
         date1=_date1,
