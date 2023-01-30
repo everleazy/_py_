@@ -1,4 +1,4 @@
-def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
+def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, _lang='ru'):
     params = dict(
         ids=counter,
         date1=_date1,
@@ -6,7 +6,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort):
         metrics=_metrics,
         dimensions=_dimensions,
         sort=_sort,
-        lang="ru",
+        lang=_lang,
         limit=limit,
         accuracy='full'
         # другие параметры -> https://yandex.ru/dev/metrika/doc/api2/api_v1/data.html
