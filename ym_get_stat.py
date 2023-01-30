@@ -32,7 +32,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
                 metrics=_metrics,
                 dimensions=_dimensions,
                 sort=_sort,
-                lang="ru",
+                lang=lang,
                 limit=limit,
                 accuracy='full',
                 offset=1+k)
