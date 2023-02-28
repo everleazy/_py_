@@ -13,7 +13,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
         )
     res_df = client.stats().get(params=params)
 
-    count_iter = math.ceil(res_df['sample_size'] / limit)
+    count_iter = math.ceil(res_df['total_rows'] / limit)
 
     print('Необходимое кол-во итераций:', count_iter)
     if count_iter == 1:
@@ -24,7 +24,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
         rep = res_df
         res_df = pd.DataFrame()
     
-        for i in range(1, math.ceil(rep['sample_size'] / limit)+1):
+        for i in range(1, math.ceil(rep['total_rows'] / limit)+1):
             params = dict(
                 ids=counter,
                 date1=_date1,
