@@ -46,7 +46,12 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
     clear_output()
     print('Данные полностью скачены!')
     
+    # # # название каждого столбца делим по ':', берём третье значение (индекс 2) = это заголовок
+    res_df.columns = [i.split(':')[2] for i in res_df.columns]
+    
     return res_df
+
+
 # для форматирования времени
 def to_time_str(df):
     time_int = round(df['Время на сайте'])
