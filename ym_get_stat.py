@@ -24,7 +24,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
         rep = res_df
         res_df = pd.DataFrame()
     
-        for i in range(1, math.ceil(rep['total_rows'] / limit)+1):
+        for i in range(1, math.ceil(rep['total_rows'] / limit)+2):
             params = dict(
                 ids=counter,
                 date1=_date1,
