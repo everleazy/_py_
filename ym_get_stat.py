@@ -48,7 +48,7 @@ def get_yd_stat(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, la
     print('Строк:', res_df.shape[0], '\nСтолбцов:', res_df.shape[1])
     
     # # # название каждого столбца делим по ':', берём третье значение (индекс 2) = это заголовок
-    res_df.columns = [i.split(':')[2] for i in res_df.columns]
+    #res_df.columns = [i.split(':')[2] for i in res_df.columns]
     
     return res_df
 
