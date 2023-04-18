@@ -45,5 +45,3 @@ def get_logs_ym(date_start,
 
           
     return res_df
-
-    
