@@ -122,6 +122,7 @@ def row_to_header(df):
 
 
 def get_ym_stat_v2(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, client_connect, lang='ru'):
+    import math
     client = client_connect
     params = dict(
         ids=counter,
