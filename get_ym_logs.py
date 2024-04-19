@@ -45,3 +45,20 @@ def get_logs_ym(date_start,
 
           
     return res_df
+
+
+print(f'''
+         logs api
+            \\
+             \\
+               _
+              (_)
+  ^___^        / \\
+  (0 0)\______/_\\ \\
+  (._.)\\  you   ) /
+       ||-----w-((
+       ||       ||
+      
+      
+      
+ ''')
