@@ -207,7 +207,7 @@ def YandexMetrika_get_data(counter, limit, _date1, _date2, _metrics, _dimensions
     print('Необходимое кол-во итераций:', count_iter)
     if count_iter == 1:
         res_df = pd.DataFrame(res_df().to_dicts())
-        print('Данные полностью скачены.')
+        #print('Данные полностью скачены.')
     else:
         k = 0
         rep = res_df
@@ -228,14 +228,14 @@ def YandexMetrika_get_data(counter, limit, _date1, _date2, _metrics, _dimensions
                 accuracy='full',
                 offset=1+k)
     
-            print(f'....качаю с строки #{k}, итерация #{i}')
+            #print(f'....качаю с строки #{k}, итерация #{i}')
             k += limit
         
             report = client.stats().get(params=params)
     
             res_df = pd.concat([res_df, pd.DataFrame(report().to_dicts())])
     #clear_output()
-    print('Данные полностью скачены!')
-    print('Строк:', res_df.shape[0], '\nСтолбцов:', res_df.shape[1])
+    #print('Данные полностью скачены!')
+    #print('Строк:', res_df.shape[0], '\nСтолбцов:', res_df.shape[1])
 
     return res_df
