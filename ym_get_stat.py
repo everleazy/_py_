@@ -204,7 +204,7 @@ def YandexMetrika_get_data(counter, limit, _date1, _date2, _metrics, _dimensions
 
     count_iter = math.ceil(res_df['total_rows'] / limit)
 
-    print('Необходимое кол-во итераций:', count_iter)
+    #print('Необходимое кол-во итераций:', count_iter)
     if count_iter == 1:
         res_df = pd.DataFrame(res_df().to_dicts())
         #print('Данные полностью скачены.')
