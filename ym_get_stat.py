@@ -178,7 +178,9 @@ def get_ym_stat_v2(counter, limit, _date1, _date2, _metrics, _dimensions, _sort,
     
     return res_df
 
+from tenacity import retry, stop_after_attempt, wait_fixed
 
+@retry(stop=stop_after_attempt(10), wait=wait_fixed(5))
 def YandexMetrika_get_data(counter, limit, _date1, _date2, _metrics, _dimensions, _sort, client_connect, 
                     filters, 
                     lang='en'):
